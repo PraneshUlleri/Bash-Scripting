@@ -32,10 +32,12 @@ int  main()
      pid_t pid;
      pid=fork();
      if (pid==0)
-          ChildProcess();
-     else 
+     {   	 wait(NULL);
+
+      	     ChildProcess();
+     } else 
 	{
-	  wait(NULL);
+ //		 wait(NULL);
           ParentProcess();
 	}
       exit(0);
