@@ -1,8 +1,7 @@
 usr=`whoami`
-echo "enter the dir: /home/$usr"
-read path
+path=$1
 path="/home/$usr$path"
 
 echo "PATH : $path"
 
-ls "$path"	
+ls "$path"
