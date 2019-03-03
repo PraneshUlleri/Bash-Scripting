@@ -1,8 +1,9 @@
  #!/bin/bash 
- COUNTER=$#
- until [  $COUNTER -le 1 ]; 
+ COUNTER=1
+ until [  $COUNTER -ge $# ]; 
  do     
-     let COUNTER-=1
+# echo "1"
+     	 let COUNTER=COUNTER+1
  done
  
 echo $COUNTER
