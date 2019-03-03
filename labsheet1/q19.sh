@@ -4,10 +4,10 @@ echo " Lower to Upper : u"
 echo " Upper to Lower : l"
 read c
 case $c in 
-	u):
+	-u):
 	       rename 'y/a-z/A-Z/' *	
 		;;
-	l):
+	-l):
 		rename 'y/A-Z/a-z/' *
 		;;
 
