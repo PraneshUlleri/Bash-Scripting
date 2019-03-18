@@ -8,7 +8,7 @@
 int main(int argc,char *argv[])
 {
 	printf("Parent ID   Self ID\n");
-	printf("  %d       %d\n",getppid(),getpid());
+	printf("A  %d       %d\n",getppid(),getpid());
 	pid_t p2=fork();
 	if(p2!=0)
 		{	
@@ -20,18 +20,18 @@ int main(int argc,char *argv[])
 				pid_t p4=fork();
 				if(p4==0)
 				{
-					printf("  %d       %d\n",getppid(),getpid());
+					printf("a  %d       %d\n",getppid(),getpid());
 					pid_t p7=fork();
 					if(p7==0)
 					{
-						printf("  %d       %d\n",getppid(),getpid());
+						printf("b  %d       %d\n",getppid(),getpid());
 						pid_t p8=fork();
 						if(p8!=0)
 						{	
 							wait(NULL);
 							pid_t p9=fork();
 							if(p9==0)
-								printf("  %d       %d\n",getppid(),getpid());
+								printf("c  %d       %d\n",getppid(),getpid());
 							else
 							  {
 								wait(NULL);
@@ -39,7 +39,7 @@ int main(int argc,char *argv[])
 						}
 						else
 						{
-							printf("  %d       %d\n",getppid(),getpid());
+							printf("d  %d       %d\n",getppid(),getpid());
 						}
 					}
 					else
@@ -55,7 +55,7 @@ int main(int argc,char *argv[])
 			}
 			else
 			{
-				printf("  %d       %d\n",getppid(),getpid());
+				printf("e  %d       %d\n",getppid(),getpid());
 				pid_t p5=fork();
 				if(p5!=0)
 					{	
@@ -63,7 +63,7 @@ int main(int argc,char *argv[])
 						pid_t p6=fork();
 						if(p6==0)
 						{
-							printf("  %d       %d\n",getppid(),getpid());
+							printf("f  %d       %d\n",getppid(),getpid());
 						}
 						else
 						{
@@ -72,14 +72,14 @@ int main(int argc,char *argv[])
 					}
 				else
 					{
-						printf("  %d       %d\n",getppid(),getpid());
+						printf("g  %d       %d\n",getppid(),getpid());
 					}
 			}
 			
 		}
 	else
 	{
-		printf("  %d       %d\n",getppid(),getpid());
+		printf("h  %d       %d\n",getppid(),getpid());
 	}
 	exit(0);
 	return 0;
